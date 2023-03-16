@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<title>AP Edcation</title>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/my-style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/prism.js" data-manual></script>
+    <script src="js/navbar.js"></script>
+    <!-- <script src="../_assets/js/custom.js"></script> -->
+
+</head>
+
+<body>
+    <div w3-include-html="navbar.html"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="lecture-cont">
+                <img src="img/lecture.jpg" alt="lecture">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-lg-9 col-sm-8 col-xs-12">
+
+                <div class="embed-responsive my-1 embed-responsive-16by9" id="tabss">
+                    <iframe src="https://www.youtube.com/embed/SHNKu_qhk0o" title="YouTube video player"
+                        allowfullscreen></iframe>
+                </div>
+
+                <div class="embed-responsive my-1 embed-responsive-16by9" id="tabss">
+                    <iframe src="https://www.youtube.com/embed/sMHNhbTu-ew" allowfullscreen></iframe>
+                </div>
+
+                <div class="embed-responsive my-1 embed-responsive-16by9" id="tabss">
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mbuLnoVOMEI"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+
+
+            </div>
+            <div class="col-md-4 col-lg-3 col-sm-4 col-xs-12 thumbActive">
+                <img src="video-thumbs/thumbs1.png" data-toggle="tabss" class="img-thumbnail my-1 roals">
+                <img src="video-thumbs/thumbs2.png" data-toggle="tabss" class="img-thumbnail my-1 roals">
+                <img src="video-thumbs/thumbs3.png" data-toggle="tabss" class="img-thumbnail my-1 roals">
+        
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $(".embed-responsive").hide();
+            $(".embed-responsive:first").show();
+            $(".roals").click(function () {
+                $(".embed-responsive").hide();
+                var hideshow = $(this).attr("data-toggle");
+                $("#" + hideshow).show();
+            });
+            $('.embed-responsive').each(function (b) { $(this).attr('id', 'tabss' + (b + 1)); });
+            $('.roals').each(function (c) { $(this).attr('data-toggle', 'tabss' + (c + 1)); });
+
+            $(".roals").click(function () {
+                $(this).parents('.thumbActive').find('.active').removeClass("active");
+                $(this).addClass("active")
+
+
+            })
+
+
+            //         $(".btn") .click (function(){ 
+            //    $(".acord") .slideUp(500);
+            //    $(".btn").removeClass("active");
+
+        });
+        includeHTML();
+    </script>
+</body>
+
+</html>
